@@ -1,0 +1,1851 @@
+[[snippets]]
+  description = "zip folder"
+  command = "zip -r filename.zip folder"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "wp cli post comment disable"
+  command = "wp post list --format=ids | xargs wp post update --comment_status=closed"
+  tag = ["wpcli"]
+  output = ""
+
+[[snippets]]
+  description = "wp cli ping disable"
+  command = "wp post list --format=ids | xargs wp post update --comment_status=closed"
+  tag = ["wpcli"]
+  output = ""
+
+[[snippets]]
+  description = "website using php73"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php73"
+  tag = ["phpversion"]
+  output = ""
+
+[[snippets]]
+  description = "website using php56"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php56"
+  tag = ["phpversion"]
+  output = ""
+
+[[snippets]]
+  description = "vmstat"
+  command = "vmstat 1 20"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "unzip folder"
+  command = "unzip filename.zip"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "untar tar.gz"
+  command = "tar -xzf filename.tar.gz"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "untar tar"
+  command = "tar -xf filename.tar"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "umount kill process"
+  command = "lsof +f -- <Mount_path=/backup>"
+  tag = ["umount"]
+  output = ""
+
+[[snippets]]
+  description = "umount kill process"
+  command = "lsof +f -- /backup"
+  tag = ["umount"]
+  output = ""
+
+[[snippets]]
+  description = "telnet mail server 587 port"
+  command = "telnet mail.<domain=domain.com> 587"
+  tag = ["telnet"]
+  output = ""
+
+[[snippets]]
+  description = "tar gzip"
+  command = "tar -czf tarfile.tar.gz folder"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "srdb database search and replace"
+  command = "php srdb.cli.php -h localhost -n <database:database_name> -u <username:username> -p <userpass:userpass> -s <search:search> -r <replace:replace> -z"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "screen resume"
+  command = "screen -rd <Name=name>"
+  tag = ["screen"]
+  output = ""
+
+[[snippets]]
+  description = "rsync key"
+  command = "rsync -arvzhe \"ssh -i <key=/ssh-private-key>\" --progress <source=/backup> <destination=root@ip:/backup/>"
+  tag = ["rsync"]
+  output = ""
+
+[[snippets]]
+  description = "restore csf permission"
+  command = "chattr -i <Directory=/home/user/public_html>; chmod 0755 <Directory=/home/user/public_html>"
+  tag = ["csf"]
+  output = ""
+
+[[snippets]]
+  description = "restart litespeed"
+  command = "systemctl restart lsws"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "restart all services"
+  command = "/scripts/restartsrv_chkserv"
+  tag = ["chkservd"]
+  output = ""
+
+[[snippets]]
+  description = "remove mail per hour limit"
+  command = "rm -f /var/cpanel/email_send_limits/max_deferfail_<Domain=abc.com>"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "reboot history and uptime"
+  command = "last reboot; uptime"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "reboot history and uptime"
+  command = "last reboot; uptime"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "pngquant optimize png images specific folder"
+  command = "find <Location=/public_html/wp-content/uploads/*> -name '*.png' -exec pngquant --quality 70-90 --verbose --ext .png --force {} \\;"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "phpinfo.php download"
+  command = "wget https://www.dhakawebhost.com/scripts/phpinfo.php; cpUser=`pwd | cut -d/ -f3`; chown $cpUser.$cpUser phpinfo.php"
+  tag = ["download"]
+  output = ""
+
+[[snippets]]
+  description = "phpfpm mail function enabled domain"
+  command = "grep -l exec,passthru,shell_exec,system /var/cpanel/userdata/*/*.php-fpm.yaml"
+  tag = ["phpinfo"]
+  output = ""
+
+[[snippets]]
+  description = "phpfpm mail function enabled"
+  command = "grep -s exec,passthru,shell_exec,system /var/cpanel/userdata/*/*.php-fpm.yaml"
+  tag = ["phpinfo"]
+  output = ""
+
+[[snippets]]
+  description = "optimize png images optipng 07 slow"
+  command = "find <Location=/home/skywebhost/public_html/*> -type f -iname '*.png' -exec optipng -o7 -preserve -strip all {} +"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "optimize png images optipng 02 fast"
+  command = "find <Location=/home/skywebhost/public_html/*> -type f -iname '*.png' -exec optipng -o2 -preserve -strip all {} +"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "optimize jpg images to 80% quality"
+  command = "find <Location=/home/skywebhost/public_html/*> -type f \\( -iname \\*.jpg -o -iname \\*.jpeg \\) -print0 | xargs -0 jpegoptim --max=80 --strip-all --preserve --totals --all-progressive"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "optimize jpg images to 70% quality"
+  command = "find <Location=/home/skywebhost/public_html/*> -type f \\( -iname \\*.jpg -o -iname \\*.jpeg \\) -print0 | xargs -0 jpegoptim --max=70 --strip-all --preserve --totals --all-progressive"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "optimize jpg and png images optipng"
+  command = "find <Location=/home/skywebhost/public_html/*> -iname '*.jpg' -print0 | xargs -0 jpegoptim --max=80 --strip-all --preserve --totals --all-progressive; find /home/serverthree/public_html/* -type f -iname '*.png' -exec optipng -o2 -strip all {} +"
+  tag = ["optimize"]
+  output = ""
+
+[[snippets]]
+  description = "mysqladmin status with query"
+  command = "mysqladmin proc stat"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysqladmin status 1s delay"
+  command = "watch -n1 mysqladmin proc stat"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql version and uptime"
+  command = "mysqladmin ver"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql repair single database"
+  command = "mysqlcheck -r <Database_Name=Database>"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql repair multiple database"
+  command = "mysqlcheck -r --databases <Databasename=dbname>"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql process kill"
+  command = "mysqladmin kill <mysqlid=id>"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql optimize single database"
+  command = "mysqlcheck -c <Database_Name=database>"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "litespeed version check"
+  command = "/usr/local/lsws/bin/lshttpd -v"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "litespeed status"
+  command = "service lsws status"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "litespeed mail function enabled"
+  command = "grep -l disable_functions /home/*/public_html/*.ini"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "litespeed license verify locally"
+  command = "/usr/local/lsws/bin/lshttpd -t"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "kill all detached screen session"
+  command = "screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
+  tag = ["screen"]
+  output = ""
+
+[[snippets]]
+  description = "key buffer size calculate shared hosting"
+  command = "awk '/MemAvail/{$3=\"G\";_=$2;$2=sprintf(\"% 3.0f\",_/1048576);print;for (i=30;i>=15;i-=5) {$1=\"MemAvail_\"i\"%:\"; $2=sprintf(\"%3.0f\",_*(i/100)/1048576); $4=sprintf(\"| %.0f M\",_*(i/100)/1024);print}}' /proc/meminfo"
+  tag = ["buffer"]
+  output = ""
+
+[[snippets]]
+  description = "key buffer size calculate dedicated hosting"
+  command = "awk '/MemTotal/{$3=\"GB\";$2=sprintf(\"%.0f\",$2/1048576); print;$1=\"  Mem80%:\";$2=sprintf(\"%.0f\",$2*.25);print}' /proc/meminfo"
+  tag = ["buffer"]
+  output = ""
+
+[[snippets]]
+  description = "iotop"
+  command = "iotop -d 5"
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "gunzip .gz"
+  command = "gunzip filename.gz"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "freshclam configuration edit"
+  command = "vi /usr/local/cpanel/3rdparty/etc/freshclam.conf"
+  tag = ["scan"]
+  output = ""
+
+[[snippets]]
+  description = "find 777 permission"
+  command = "find <Directory=/home/dhakawe1/public_html> -type f ! -perm 0777 -print"
+  tag = ["permission"]
+  output = ""
+
+[[snippets]]
+  description = "epel repository install"
+  command = "yum install epel-release"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "dmesg"
+  command = "dmesg"
+  tag = ["SAR"]
+  output = ""
+
+[[snippets]]
+  description = "csf ip block search"
+  command = "csf -g <ip=ip>"
+  tag = ["csf"]
+  output = ""
+
+[[snippets]]
+  description = "cron job check one user"
+  command = "crontab -u <username:user> -l"
+  tag = ["cron"]
+  output = ""
+
+[[snippets]]
+  description = "cron job check all users"
+  command = "for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done"
+  tag = ["cron"]
+  output = ""
+
+[[snippets]]
+  description = "cpanel user setting files"
+  command = "cd /var/cpanel/users"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "cpanel datastore cache delete"
+  command = "find /root/.cpanel/datastore/ -type f -mtime <Time_before=+30> -name \"Cpanel::Net::Whois::IP::Cached*\" -delete"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "cpanel backup force"
+  command = "/usr/local/cpanel/bin/backup –-force"
+  tag = ["backup"]
+  output = ""
+
+[[snippets]]
+  description = "count file size of specific file"
+  command = "find . -type f -name '*<Extension=.jpg>' -exec du -ch {} + | grep total$ | cut -f1"
+  tag = ["size"]
+  output = ""
+
+[[snippets]]
+  description = "count all jpg png gif images with size"
+  command = "find . -type f -regex '.*\\.\\(jpg\\|jpeg\\|png\\|gif\\)' -exec du -b {} \\; | sed -E 's/([0-9]+)\\s+.*(\\..*)/\\1 \\2/g' | awk 'BEGIN{print \"file type\\ttotal count\\ttotal size\"}  {totalSize[$2] += $1; count[$2]++} END {for (ext in count){ \"numfmt --to=iec \"totalSize[ext] | getline readableSize ;print ext\"\\t\\t\"count[ext]\"\\t\\t\"readableSize}}'"
+  tag = ["size"]
+  output = ""
+
+[[snippets]]
+  description = "count all file extention recursively"
+  command = "find . -type f | sed -n 's/..*\\.//p' | sort | uniq -c"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "chkservd configuration"
+  command = "cat /etc/chkserv.d/chkservd.conf"
+  tag = ["chkservd"]
+  output = ""
+
+[[snippets]]
+  description = "chkconfig list"
+  command = "chkconfig --list"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "check all services enabled"
+  command = "systemctl list-unit-files | grep enabled"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "check all services"
+  command = "tail -n 100 /var/log/chkservd.log"
+  tag = ["chkservd"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel system info"
+  command = "curl https://ssp.cpanel.net/run | sh"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel reseller setting files"
+  command = "cd /var/cpanel/resellers"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel password change"
+  command = "whmapi1 passwd user=<Username> password=<Password> enabledigest=1 db_pass_update=1"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel package setting files"
+  command = "cd /var/cpanel/packages"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel license update"
+  command = "/usr/local/cpanel/cpkeyclt"
+  tag = ["license"]
+  output = ""
+
+[[snippets]]
+  description = "cPanel DNS zone files"
+  command = "cd /var/named"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "backup all accounts force"
+  command = "/usr/local/cpanel/bin/backup –force"
+  tag = ["backup"]
+  output = ""
+
+[[snippets]]
+  description = "all png file size"
+  command = "find . -type f -name '*.png' -exec du -ch {} + | grep total$"
+  tag = ["size"]
+  output = ""
+
+[[snippets]]
+  description = "all jpg file size"
+  command = "find . -type f -name '*.jpg' -exec du -ch {} + | grep total$"
+  tag = ["size"]
+  output = ""
+
+[[snippets]]
+  description = "Write speed test"
+  command = "dd if=/dev/zero of=/home/test1.img bs=100M count=10 oflag=dsync ; rm /home/test1.img"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Write speed and read speed test"
+  command = "dd if=/dev/zero of=/tmp/test1.img bs=100M count=10 oflag=dsync; echo 3 | sudo tee /proc/sys/vm/drop_caches; dd if=/tmp/test1.img of=/dev/null bs=8k"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Wordpress xmlrpc bruteforce attack"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* |grep xmlrpc.php|awk '{print $1}'|sort |uniq -c|sort -nr | head"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Wordpress login bruteforce by hour"
+  command = "grep \"<Hour=09/Apr/2019:23:>\" /usr/local/apache/domlogs/<domain=abc.com> | grep wp-login.php  |awk '{print $1}'|cut -d':' -f1|sort |uniq -c|sort -n"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Wordpress login bruteforce attack"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* |grep wp-login.php|awk '{print $1}'|sort |uniq -c|sort -nr | head"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Website using php72"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php72"
+  tag = ["phpversion"]
+  output = ""
+
+[[snippets]]
+  description = "Website using php71"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php71"
+  tag = ["phpversion"]
+  output = ""
+
+[[snippets]]
+  description = "Website using php70"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php70"
+  tag = ["phpversion"]
+  output = ""
+
+[[snippets]]
+  description = "Update user domain"
+  command = "/scripts/updateuserdomains"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Unsuspend outgoing mail"
+  command = "whmapi1 unsuspend_outgoing_email user=<User>"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "Unsuspend all cpanel account"
+  command = "for username in `cat /etc/userdomains | awk {'print $2'} | grep -v nobody | sort -n | uniq`;do /scripts/unsuspendacct $username;done"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "Unlimited mail per hour user"
+  command = "grep -s \"MAX_EMAIL_PER_HOUR=unlimited\" /var/cpanel/users/*"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Unlimited mail per hour package"
+  command = "grep -s \"MAX_EMAIL_PER_HOUR=unlimited\" /var/cpanel/packages/*"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Unlimited mail and max deferred value show"
+  command = "echo \"Unlimited mail by user\"; grep -s \"MAX_EMAIL_PER_HOUR=unlimited\" /var/cpanel/users/* |wc -l; echo \"Unlimited mail by Package\"; grep -s \"MAX_EMAIL_PER_HOUR=unlimited\" /var/cpanel/packages/* |wc -l;echo \"Max Defer by User\"; grep -s \"MAX_DEFER_FAIL_PERCENTAGE=unlimited\" /var/cpanel/users/* | wc -l ; echo \"Max Defer by Package\"; grep -s \"MAX_DEFER_FAIL_PERCENTAGE=unlimited\" /var/cpanel/packages/* | wc -l"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Tweak setting configuration edit"
+  command = "vi /var/cpanel/cpanel.config"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Total files"
+  command = "ls | wc -c"
+  tag = ["list"]
+  output = ""
+
+[[snippets]]
+  description = "Total files"
+  command = "ls | wc -c"
+  tag = ["list"]
+  output = ""
+
+[[snippets]]
+  description = "Total RAM usage"
+  command = "echo \"Httpd RAM Usage:\" ;ps aux|awk '/httpd/ {sum+=$6} END {print sum/1024}'; echo \"pHP RAM Usage:\" ; ps aux|awk '/php/ {sum+=$6} END {print sum/1024}'; echo \"Resident Memory Usage:\" ;ps h -Ao rsz,vsz,cmd | sort -rn | awk '{total = total + $1 }END{print total/1000}'"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Total Mysql database size"
+  command = "echo -e \"\\n\\e[1;31m=== MySQL Database size ===\\e[0m\\n\"; du --max-depth=1 /var/lib/mysql | sort -nr | cut -f2 | xargs du -sh 2>/dev/null | head | cut -d \"/\" -f1,5"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Top20 RAM users"
+  command = "ps aux --sort=-%mem | head -n 20"
+  tag = ["top20"]
+  output = ""
+
+[[snippets]]
+  description = "Top20 Process"
+  command = "ps -eo pcpu,pid,user,args | sort -k 1 -r | head -40"
+  tag = ["top20"]
+  output = ""
+
+[[snippets]]
+  description = "Top20 Memory usage percentage by user"
+  command = "tmpvar=””; for each in `ps aux | grep -v COMMAND | awk '{print $1}' | sort -u`; do tmpvar=\"$tmpvar\\n`ps aux | egrep ^$each | awk 'BEGIN{total=0};{total += $4};END{print total, $1}'`\"; done; echo -e $tmpvar | grep -v ^$ | sort -rn | head -n 20; unset tmpvar"
+  tag = ["top20"]
+  output = ""
+
+[[snippets]]
+  description = "Top20 CPU users"
+  command = "top -bcn1 | head -n 26"
+  tag = ["top20"]
+  output = ""
+
+[[snippets]]
+  description = "Top five users using CPU RAM and MYSQL"
+  command = "OUT=$(/usr/local/cpanel/bin/dcpumonview | grep -v Top | sed -e 's#<[^>]*># #g' | while read i ; do NF=`echo $i | awk {'print NF'}` ; if [[ \"$NF\" == \"5\" ]] ; then USER=`echo $i | awk {'print $1'}`; OWNER=`grep -e \"^OWNER=\" /var/cpanel/users/$USER | cut -d= -f2` ; echo \"$OWNER $i\"; fi ; done) ; (echo \"USER CPU\" ; echo \"$OUT\" | sort -nrk4 | awk '{printf \"%s %s%\\n\",$2,$4}' | head -5) | column -t ;echo;(echo -e \"USER MEMORY\" ; echo \"$OUT\" | sort -nrk5 | awk '{printf \"%s %s%\\n\",$2,$5}' | head -5) | column -t ;echo;(echo -e \"USER MYSQL\" ; echo \"$OUT\" | sort -nrk6 | awk '{printf \"%s %s%\\n\",$2,$6}' | head -5) | column -t ;"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "Telnet mail server by TLS or SSL"
+  command = "openssl s_client -connect <Mxserver=mail.dhakawebhost.com>:25 -starttls smtp"
+  tag = ["telnet"]
+  output = ""
+
+[[snippets]]
+  description = "Telnet mail server 25 port"
+  command = "telnet mail.<domain=domain.com> 25"
+  tag = ["telnet"]
+  output = ""
+
+[[snippets]]
+  description = "System info"
+  command = "HOST=`hostname`;HTTPD='/usr/local/apache/conf/httpd.conf'; PHP=`php -i | grep php.ini | grep \"Configuration\" | cut -d \">\" -f2 | cut -c 2- | tail -n 1`; MYSQL='/etc/my.cnf'; echo -e \"\\n\\e[0;31m=== Cpanel Server Stats by Joel Parks ===\\e[0m\\n\"; echo -e \"Host: `hostname`\"; echo -e \"\\n\\e[1;31m=== Version Info ===\\e[0m\\n\"; cat /etc/redhat-release; echo -e \"\"; /usr/local/cpanel/cpanel -V; echo -e \"\"; /usr/local/apache/bin/httpd -v | grep --color=never nix ; echo -e \"\"; /usr/local/bin/php -v | grep --color=never cli; echo -e \"\"; mysqladmin ver|grep --color=never \"Server version\"|sed 's/Server version/MySQL Version/'; echo -e \"\\n\\e[0;32m=== Current Mail in Queue ===\\e[0m\\n\"; exim -bpc; echo -e \"\\n\\e[1;33m=== Disk Space Usage ===\\e[0m\\n\"; df -h; echo -e \"\\n\\e[1;35m=== Current Memory Usage ===\\e[0m\\n\"; free -m; echo -e \"\\n\\e[0;31m=== Number of Processors ===\\e[0m\\n\"; grep -c proc /proc/cpuinfo; echo -e \"\\n\\e[1;31m=== PHP Info ===\\e[0m\\n\"; grep --color=never \"memory_limit\" $PHP; grep --color=never \"max_execution_time\" $PHP; grep --color=never \"max_input_time\" $PHP; grep --color=never \"post_max_size\" $PHP; grep --color=never \"upload_max_filesize\" $PHP; grep --color=never \"max_file_uploads\" $PHP; echo -e \"\\n\\e[0;32m=== PHP Handler ===\\e[0m\\n\"; /usr/local/cpanel/bin/rebuild_phpconf --current; echo -e \"\\n\\e[1;33m=== Number of PHP Processes ===\\e[0m\\n\"; ps faux | grep php -c | grep -v grep; echo -e \"\\n\\e[1;35m=== Number of Apache Processes ===\\e[0m\\n\"; ps faux | grep httpd -c | grep -v grep; echo -e \"\\n\\e[0;31m=== Apache Configuration ===\\e[0m\\n\"; /etc/init.d/httpd -V | grep --color=never MPM; grep --color=never \"KeepAlive \" $HTTPD; egrep 'MaxClients|KeepAlive|MaxRequestsPerChild|Timeout|Servers|Threads|ServerLimit' $HTTPD; echo -e \"\\n\\e[1;31m=== MaxClients Hits ===\\e[0m\\n\"; grep MaxClients /usr/local/apache/logs/error_log |tail; echo -e \"\\n\\e[0;32m=== Graceful Restarts ===\\e[0m\\n\"; grep Graceful /usr/local/apache/logs/error_log |tail; echo -e \"\\n\\e[1;33m=== Number of SYN connections ===\\e[0m\\n\"; netstat -nap | grep SYN | wc -l; echo -e \"\\n\\e[1;35m=== Top 10 SYN Flood Conections ===\\e[0m\\n\"; netstat -tn 2>/dev/null | grep SYN | awk '{print $5}' | cut -f1 -d: | sort | uniq -c | sort -rn | head | sed 's/^ //'; echo -e \"\\n\\e[0;31m=== Top 10 Connections to Apache ===\\e[0m\\n\"; netstat -tn 2>/dev/null | awk '{if ($4  \":80\") print $5}' | cut -f1 -d: | sort | uniq -c | sort -rn | head | sed 's/^ //'; echo -e \"\\n\\e[1;31m=== Port 80 Connections ===\\e[0m\\n\"; netstat -tn 2>/dev/null | grep :80 | wc -l; echo -e \"\\n\\e[0;32m=== Number of IPs Connected ===\\e[0m\\n\"; netstat -tn 2>/dev/null | awk '{if ($4  \":80\") print $5}' | cut -f1 -d: | sort | uniq -c | sort -rn | wc -l; echo -e \"\\n\\e[1;33m=== WordPress Brute Force ===\\e[0m\\n\"; grep -s wp-login.php /usr/local/apache/domlogs/ | grep POST | grep \"$(date +\"%d/%b/%Y\")\" | cut -d: -f1 | sort| uniq -c | sort -nr | head | sed 's/^ //g'; echo -e \"\\n\\e[1;35m=== Number of MySQL Connections ===\\e[0m\\n\"; netstat -nap | grep -i sql.sock | wc -l; echo -e \"\\n\\e[0;31m=== MySQL Database Queries ===\\e[0m\\n\"; mysqladmin proc stat; echo -e \"\\n\\e[1;31m=== MySQL Databases ===\\e[0m\\n\"; du --max-depth=1 /var/lib/mysql | sort -nr | cut -f2 | xargs du -sh 2>/dev/null | head | cut -d \"/\" -f1,5; echo -e \"\\n\\e[0;32m=== MySQL Errors ===\\e[0m\\n\"; cat /var/lib/mysql/${HOST}.err | tail; echo -e \"\\n\\e[1;33m=== MySQL Connections ===\\e[0m\\n\"; mysql -e 'show status;' |grep --color=never connect; echo -e \"\\n\\e[1;35m=== MySQL Configuration ===\\e[0m\\n\"; egrep 'max_connections|max_heap_table_size|tmp_table_size|query_cache_size|timeout|table_cache|open_files|thread|innodb' $MYSQL; echo -e \"\\n\\e[0;31m=== cPanel Settings ===\\e[0m\\n\"; egrep -i 'piped|extracpus' /var/cpanel/cpanel.config; echo -e \"\\n\\e[1;31m=== Bots (robots or crawlers) ===\\e[0m\\n\"; find /usr/local/apache/domlogs/*/ -type f|grep -v -E $'(_|-)log|.gz'|xargs grep -H \"\"|grep $(date +%d/%b/%Y)|grep -i -E \"crawl|bot|spider|yahoo|bing|google\"|while read line ; do IP=$(echo $line | awk '{print $1}'); AGENT=$(echo $line | awk -F\\\" '{print $6}' | grep -ioP '[^ ]*(bot|spider|crawl)[^ ]*'|grep -v http); echo -e \"$IP $AGENT\"; done |sed -e 's/\\/usr\\/local\\/apache\\/domlogs\\/[[:alnum:]]*\\///g;s/\\:/ /g;s/\\/.*;//g'|sort|uniq -c|sort -rn|awk '{print $1\" \"$3\" \"$4\" \"$2}'|column -t|head"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Suspend outgoing mail"
+  command = "whmapi1 suspend_outgoing_email user=<User>"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "Super duper4 script run"
+  command = "wget http://dhakawebhost.com/scripts/super-duper4.sh && chmod +x super-duper4.sh && ./super-duper4.sh"
+  tag = ["script_run"]
+  output = ""
+
+[[snippets]]
+  description = "Super Duper3 script run"
+  command = "wget http://dhakawebhost.com/scripts/super-duper3.sh && chmod +x super-duper3.sh && ./super-duper3.sh"
+  tag = ["script_run"]
+  output = ""
+
+[[snippets]]
+  description = "Status litespeed"
+  command = "systemctl status lsws"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "Status epache extended"
+  command = "service httpd extended"
+  tag = ["service_status"]
+  output = ""
+
+[[snippets]]
+  description = "Status MySQL"
+  command = "systemctl status mysql.service"
+  tag = ["service_status"]
+  output = ""
+
+[[snippets]]
+  description = "Status Exim"
+  command = "systemctl status exim.service"
+  tag = ["service_status"]
+  output = ""
+
+[[snippets]]
+  description = "Status Apache"
+  command = "systemctl status httpd.service"
+  tag = ["service_status"]
+  output = ""
+
+[[snippets]]
+  description = "Spamfu2 script run"
+  command = "wget http://dhakawebhost.com/scripts/spamfu2.sh && chmod +x spamfu2.sh && ./spamfu2.sh"
+  tag = ["script_run"]
+  output = ""
+
+[[snippets]]
+  description = "Software RAID test"
+  command = "smartctl --all /dev/sda"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Softaculous license update"
+  command = "/usr/local/cpanel/3rdparty/bin/php /usr/local/cpanel/whostmgr/docroot/cgi/softaculous/cron.php"
+  tag = ["license"]
+  output = ""
+
+[[snippets]]
+  description = "Set max defer percentage"
+  command = "<Value=VALUE=10>; FIELD=\"MAX_DEFER_FAIL_PERCENTAGE\"; find /var/cpanel/packages/ -type f -exec awk -F= '/'\"$FIELD\"'/{split(FILENAME,PKG,\"/\"); P=\"whmapi1 editpkg name=\\\"\" PKG[5] \"\\\" '\"$FIELD=$VALUE\"'\"; print \"echo \\\"\"P\"\\\"\"; print P;}' {} + | bash | awk '{print \"[\",strftime(),\"]\",$0}' | tee -a /root/dwh.pkg-adjust.log"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Set mail per hour"
+  command = "<Value=VALUE=10>; FIELD=\" MAX_EMAIL_PER_HOUR\"; find /var/cpanel/packages/ -type f -exec awk -F= '/'\"$FIELD\"'/{split(FILENAME,PKG,\"/\"); P=\"whmapi1 editpkg name=\\\"\" PKG[5] \"\\\" '\"$FIELD=$VALUE\"'\"; print \"echo \\\"\"P\"\\\"\"; print P;}' {} + | bash | awk '{print \"[\",strftime(),\"]\",$0}' | tee -a /root/dwh.pkg-adjust.log"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Sendmail by subject"
+  command = "echo \"Subject: Mail Test\" | sendmail -v <email=ronibd07@gmail.com>"
+  tag = ["sendmail"]
+  output = ""
+
+[[snippets]]
+  description = "Sendmail"
+  command = "echo \"Subject : Test mail\" | sendmail –f <Sender=info@dhakahostit.com> –v <Receipent=ronibd07@gmail.com>"
+  tag = ["sendmail"]
+  output = ""
+
+[[snippets]]
+  description = "Sed ip address in a file"
+  command = "sed -i -e 's/'<Oldip=oldip>'\\b/'<Newip=newip>p'/g' <filename=filename>"
+  tag = ["sed"]
+  output = ""
+
+[[snippets]]
+  description = "Sed find and replace text"
+  command = "find -type f -exec sed -i 's@<Find=dhakawebhost.com>@<Replace=hostaladin.com>@g' {} \\;"
+  tag = ["sed"]
+  output = ""
+
+[[snippets]]
+  description = "Sar SWAP"
+  command = "sar -S -f /var/log/sa/<Date=sa01>"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "Sar RAM"
+  command = "sar -r -f /var/log/sa/<Date=sa01>"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "SSH configuration edit"
+  command = "vi /etc/ssh/sshd_config"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "SAR SWAP average"
+  command = "sar -S"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "SAR RAM average"
+  command = "sar -r"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "SAR CPU average"
+  command = "sar -q"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "SAR CPU"
+  command = "sar -q -f /var/log/sa/<Date=sa01>"
+  tag = ["sar"]
+  output = ""
+
+[[snippets]]
+  description = "Rsync Source to Destination"
+  command = "rsync -arvzhe 'ssh -p <port=2683>' --progress <source=/backup> <destination=root@107.150.6.254:/backup/>"
+  tag = ["rsync"]
+  output = ""
+
+[[snippets]]
+  description = "Rsync Destination to Source"
+  command = "rsync -arvzhe 'ssh -p <port=2683>' --progress <destination=root@107.150.6.254:/backup> <source=/backup/>"
+  tag = ["rsync"]
+  output = ""
+
+[[snippets]]
+  description = "Restore single account"
+  command = "/scripts/restorepkg <username>"
+  tag = ["backup"]
+  output = ""
+
+[[snippets]]
+  description = "Remove yum files downloaded rpm"
+  command = "yum clean all"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Remove old log file"
+  command = "rm -rfv /home/cpeasyapache/ /var/log/*.gz /var/log/*201* /usr/local/apache/logs/*.gz /usr/local/*/logs/archive/*.gz"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Regenerate maildir size for all user"
+  command = "/scripts/generate_maildirsize --confirm --allaccounts --verbose updatead"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Regenerate maildir size"
+  command = "/scripts/generate_maildirsize --confirm --allaccounts --verbose cpaneluser"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Recent modified php"
+  command = "find . -mtime -15 -name \\*.php"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Recent modified files without date"
+  command = "find . -type f -mtime -15"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Recent modified files 2 weeks"
+  command = "find $PWD -mindepth 1 -type f -ctime -15"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Recent modified files"
+  command = "find . -newermt <startdate=2019-05-19> ! -newermt <enddate=2019-06-19> -ls"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Recent modified direcory"
+  command = "ls -lartc"
+  tag = ["modify"]
+  output = ""
+
+[[snippets]]
+  description = "Quiet csf notification"
+  command = "bash < <(curl http://kb.zeusandhera.com/hushlfdalerts)"
+  tag = ["csf"]
+  output = ""
+
+[[snippets]]
+  description = "Process tree info"
+  command = "pstree -p"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Previrtual host configuration edit"
+  command = "vi /usr/local/apache/conf/includes/pre_virtualhost_global.conf"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "Pet snippet upload"
+  command = "cp -vf /root/.config/pet/snippet.toml /home/dhakawe1/public_html/scripts/snippet.toml"
+  tag = ["snippet"]
+  output = ""
+
+[[snippets]]
+  description = "Pet snippet download"
+  command = "wget -O /root/.config/pet/snippet.toml https://www.dhakawebhost.com/scripts/snippet.toml"
+  tag = ["snippet"]
+  output = ""
+
+[[snippets]]
+  description = "PHPFPM global value update for all user"
+  command = "/scripts/php_fpm_config --rebuild; /scripts/restartsrv_apache_php_fpm; /scripts/restartsrv_httpd"
+  tag = ["phpinfo"]
+  output = ""
+
+[[snippets]]
+  description = "PHPFPM configuration edit global"
+  command = "vi /var/cpanel/ApachePHPFPM/system.yaml"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "PHP injection finder"
+  command = "find . -name '*php' | while read FILE; do echo -n \"$FILE: \"; head -n1 $FILE | wc -; done | sort -rnk2 | head -n 50"
+  tag = ["scan"]
+  output = ""
+
+[[snippets]]
+  description = "Opcache configuration edit"
+  command = "vi /opt/cpanel/ea-<Php_ver=php70>/root/etc/php.d/10-opcache.ini"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "One page at a time"
+  command = "ll -h | more"
+  tag = ["list"]
+  output = ""
+
+[[snippets]]
+  description = "Notification by WHM"
+  command = "ll /var/cpanel/user_notifications/root/history "
+  tag = ["notification"]
+  output = ""
+
+[[snippets]]
+  description = "Network Status"
+  command = "netstat -tn 2>/dev/null | awk '{if ($4 ~ \":80\") print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql table open cache"
+  command = "msqladmin variables | grep table_open_cache"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql table engine check"
+  command = "SELECT <TABLE_NAME>, ENGINE FROM information_schema.TABLES where TABLE_SCHEMA = '<database>';"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql status"
+  command = "mysqladmin stat"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql root password"
+  command = "cat /root/.my.cnf"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql restore one database"
+  command = "mysql --one-database database_name < database_name.sql"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql repair and optimize"
+  command = "mysqlcheck --check --auto-repair --all-databases; mysqlcheck --optimize --all-databases"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql repair"
+  command = "mysqlcheck --check --auto-repair --all-databases"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql query"
+  command = "echo -e \"\\n\\e[0;31m=== MySQL Database Queries ===\\e[0m\\n\";mysqladmin proc stat"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql prompt table size info"
+  command = "SELECT  ENGINE,       ROUND(SUM(data_length) /1024/1024, 1) AS \"Data MB\",       ROUND(SUM(index_length)/1024/1024, 1) AS \"Index MB\",       ROUND(SUM(data_length + index_length)/1024/1024, 1) AS \"Total MB\",       COUNT(*) \"Num Tables\"   FROM  INFORMATION_SCHEMA.TABLES   WHERE  table_schema not in (\"information_schema\", \"performance_schema\")   GROUP BY  ENGINE;"
+  tag = ["mysql_prompt"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql prompt  table number"
+  command = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE';"
+  tag = ["mysql_prompt"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql open file limit value"
+  command = "find /var/lib/mysql/ -type f |wc -l"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql monitoring disable"
+  command = "whmapi1 configureservice service=mysql enabled=1 monitored=0"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "mysql backup cPanel user"
+  command = "for I in $(mysql -e \"show databases like '<User=dhakawe1>%'\" -s --skip-column-names); do mysqldump $I > \"$I.sql\"; done"
+  tag = ["mysql_backup"]
+  output = ""
+
+[[snippets]]
+  description = "mysql backup seperate file"
+  command = "mysql -N -e 'show databases' | while read dbname; do mysqldump --complete-insert --routines --triggers --single-transaction \"$dbname\" > \"$dbname\".sql; done"
+  tag = ["mysql_backup"]
+  output = ""
+
+[[snippets]]
+  description = "mysql backup one database"
+  command = "mysqldump database_name > database_name.sql"
+  tag = ["mysql_backup"]
+  output = ""
+
+[[snippets]]
+  description = "mysql backup gzip single file"
+  command = "mysqldump <Datbase_name=name> | gzip > <Outputdb_name=db_name>"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "mysql backup gzip seperate file"
+  command = "mysql -N -e 'show databases' | while read dbname; do mysqldump --complete-insert --routines --triggers --single-transaction \"$dbname\" > \"$dbname\".sql; [[ $? -eq 0 ]] && gzip \"$dbname\".sql; done"
+  tag = ["mysql_backup"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql all databse backup single file"
+  command = "mysqldump --verbose --all-databases --routines --triggers > /backup/mysqlbkp/alldatabase.sql"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql Variables"
+  command = "mysqladmin variables"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql Process"
+  command = "mysqladmin processlist"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Most post ips by date"
+  command = "grep 2> /dev/null \"<date=27/May/2019>\" /usr/local/apache/domlogs/* | grep POST | awk '{print $1}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most post ips"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* | grep POST | awk '{print $1}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most post for a domain"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/<domain=polychembd.com>|grep POST|awk '{print $1}'|sort |uniq -c|sort -nr | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most post domain by date"
+  command = "grep 2> /dev/null \"<date=27/May/2019>\" /usr/local/apache/domlogs/* | grep POST | awk '{print $1}' | cut -d: -f1 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most post domain"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/*  | grep POST | awk '{print $1}' | cut -d: -f1 | sort | uniq -c | sort -rn | head -n 30"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most post URL"
+  command = "grep \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* | grep POST | awk '{print $7}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get url"
+  command = "grep \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* | grep GET | awk '{print $7}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get ips by date"
+  command = "grep 2> /dev/null \"<date=27/May/2019>\" /usr/local/apache/domlogs/* | grep GET | awk '{print $1}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get ips"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* | grep GET | awk '{print $1}' | cut -d: -f2 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get for a domain"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/<domain=polychembd.com>|grep GET|awk '{print $1}'|sort |uniq -c|sort -nr | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get domain by date"
+  command = "grep 2> /dev/null \"<date=27/May/2019>\" /usr/local/apache/domlogs/* | grep GET | awk '{print $1}' | cut -d: -f1 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most get domain"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/*  | grep GET | awk '{print $1}' | cut -d: -f1 | sort | uniq -c | sort -rn | head"
+  tag = ["get/post"]
+  output = ""
+
+[[snippets]]
+  description = "Most cron domain"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /home/domlogs/predictionla.com|grep POST|awk '{print $7}'|sort |uniq -c|sort -n|tail -n5"
+  tag = ["Most"]
+  output = ""
+
+[[snippets]]
+  description = "Most SQL Query user"
+  command = "mysqladmin pr|awk -F \"|\" '{ print $3 }'|grep _|sort|uniq -c|sort -n"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "Modsec rules configuration edit"
+  command = "vi /etc/apache2/conf.d/modsec/modsec2.user.conf"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "Modsec Rules"
+  command = "cd /etc/apache2/conf.d/modsec"
+  tag = ["modsec"]
+  output = ""
+
+[[snippets]]
+  description = "Modify User Account"
+  command = "vi /var/cpanel/users/<User=username>"
+  tag = ["Modify"]
+  output = ""
+
+[[snippets]]
+  description = "Migration Undo .htaccess redirect"
+  command = "for x in `ls /var/cpanel/users|grep -v \\/`; do sed -i 's;^RedirectMatch Error! Hyperlink reference not valid. \\\\.(dynamiccontent;' /home/$x/public_html/.htaccess; done"
+  tag = ["migration"]
+  output = ""
+
+[[snippets]]
+  description = "Migration Reduce TTL value and update serial"
+  command = "for i in $(find /var/named/ -maxdepth 1 -type f -iname \"*.db\"); do sed -i -e 's/^\\$TTL.*/$TTL 300/g' -e 's/[0-9]\\{10\\}/'`date +%Y%m%d%H`'/g' $i ; done; rndc reload"
+  tag = ["migration"]
+  output = ""
+
+[[snippets]]
+  description = "Migration IP address update"
+  command = "for i in $(find /var/named/ -maxdepth 1 -type f -iname \"*.db\"); do sed -i -r 's/<Old=172.245.179.242>/<New=199.188.103.154>/g' $i; done; rndc reload"
+  tag = ["migration"]
+  output = ""
+
+[[snippets]]
+  description = "Migrated website check list"
+  command = "for i in $(cat /backup/domains.txt); do nslookup $i | grep ^Name -A1| awk '{print $2}'>>migrated_website.txt;done"
+  tag = ["migration"]
+  output = ""
+
+[[snippets]]
+  description = "Memory Speed test"
+  command = "sysbench --test=memory run"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Mailscanner stop"
+  command = "service MailScanner stop"
+  tag = ["mailscanner"]
+  output = ""
+
+[[snippets]]
+  description = "Mailscanner start"
+  command = "service MailScanner start"
+  tag = ["mailscanner"]
+  output = ""
+
+[[snippets]]
+  description = "Mail Per hour limit setting"
+  command = "vi /var/cpane/users/username"
+  tag = ["mail_limit"]
+  output = ""
+
+[[snippets]]
+  description = "Logged user"
+  command = "w"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Log service status"
+  command = "tail -n 50 /var/log/chkservd.log"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Log mail"
+  command = "tail -f /var/log/maillog"
+  tag = ["log"]
+  output = ""
+
+[[snippets]]
+  description = "Log easy apache build"
+  command = "tail -n 50 /usr/local/cpanel/logs/easy/apache"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Log backup"
+  command = "tail -n  50 /usr/local/cpanel/logs/cpbackup"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Log SSH"
+  command = "tail -n 20 /var/log/secure"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Live log php fpm error"
+  command = "tail -f /opt/cpanel/ea-<PHP_Version=php70>/root/usr/var/log/php-fpm/error.log"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Live log mysql"
+  command = "tail -f /var/lib/mysql/<Hostname=server5.dhakawebhost.com.err>"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Live log exim"
+  command = "tail -f /var/log/exim_mainlog"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Live log apache"
+  command = "tail -f /etc/apache2/logs/error_log"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Live log DNS FTP and firewall"
+  command = "tail -f /var/log/messages"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Litespeed graceful restart"
+  command = "service lsws restart"
+  tag = ["litespeed"]
+  output = ""
+
+[[snippets]]
+  description = "List blockid all disk"
+  command = "blkid"
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "List all disk partition info"
+  command = "fdisk -l"
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "List all disk"
+  command = "lsblk"
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "Network configuration"
+  command = "cat /etc/sysconfig/network-scripts/ifcfg-eth0"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "Network Info"
+  command = "cat /etc/sysconfig/network-scripts/ifcfg-em1"
+  tag = ["network"]
+  output = ""
+
+[[snippets]]
+  description = "Key buffer size calculate"
+  command = "mysql -e \"set @overhead = 5 / 100; select count(INDEX_LENGTH) as Indexes, sum(INDEX_LENGTH) as Total_Index_Length, floor(@overhead * 100) as PCT, floor(sum(INDEX_LENGTH)*@overhead) as Overhead, floor(sum(INDEX_LENGTH)*(1+@overhead)) as key_buffer_size FROM information_schema.TABLES WHERE ENGINE = 'MyISAM';\""
+  tag = ["buffer"]
+  output = ""
+
+[[snippets]]
+  description = "Inotify install"
+  command = "yum install inotify-tool"
+  tag = ["scan"]
+  output = ""
+
+[[snippets]]
+  description = "Inode usage for current directory"
+  command = "echo \"Detailed Inode usage for: $(pwd)\" ; for d in `find -maxdepth 1 -type d |cut -d\\/ -f2 |grep -xv . |sort`; do c=$(find $d |wc -l) ; printf \"$c\\t\\t- $d\\n\" ; done ; printf \"Total: \\t\\t$(find $(pwd) | wc -l)\\n\""
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "Important service status"
+  command = "systemctl list-units --type service | grep -E 'clamd|cpsrvd|crond|exim|exim-587|ftpd|httpd|imap|mailman|mysql|named'"
+  tag = ["service_status"]
+  output = ""
+
+[[snippets]]
+  description = "Image resize ImageMagick"
+  command = "convert <imagename=name> -resize <size=width×height> <imagename=name>"
+  tag = ["image"]
+  output = ""
+
+[[snippets]]
+  description = "IP connection from the current hour"
+  command = "echo; echo; echo \"IP connections from the apache domlogs for the current hour:\"; echo;hours=date | awk '{print $4}' | cut -c -2; find /usr/local/apache/domlogs/*/ -type f|grep -v -E $'(_|-)log|.gz'|xargs -i tail -50000 {}|grep $(date +%d/%b/%Y):$hours|awk '{print $1, $11}'|sort |uniq -c |sort -rn|head"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "IP configuration info"
+  command = "ifconfig"
+  tag = ["network"]
+  output = ""
+
+[[snippets]]
+  description = "Host file with ip"
+  command = "cd /backup; cut -f \"1\" -d : /etc/trueuserdomains | sort | more >/backup/domains.txt ; nl -s '<Ip:173.233.65.194>  www.' domains.txt | cut -c7- >/backup/hosts"
+  tag = ["ip"]
+  output = ""
+
+[[snippets]]
+  description = "History"
+  command = "tail -n 100 /usr/local/lp/bash_eternal_history"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Hardware Raid Test"
+  command = "smartctl -a -d megaraid,<Raid_no=14> /dev/sda"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Grep text with line number"
+  command = "grep -sn \"text\" *"
+  tag = ["grep"]
+  output = ""
+
+[[snippets]]
+  description = "Grep text current directory"
+  command = "grep -R '<Text=dhakaweb> *"
+  tag = ["grep"]
+  output = ""
+
+[[snippets]]
+  description = "Grep text and count"
+  command = "grep -c '<Text=dhakawebhost>' *"
+  tag = ["grep"]
+  output = ""
+
+[[snippets]]
+  description = "Grep php version for all website"
+  command = "whmapi1 php_get_vhost_versions | grep -A1 version"
+  tag = ["php"]
+  output = ""
+
+[[snippets]]
+  description = "Grep log php fpm max error"
+  command = "grep max /opt/cpanel/ea-<PHP_Version=php70>/root/usr/var/log/php-fpm/error.log"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Grep Log modsec"
+  command = "grep -i modsec /usr/local/apache/logs/error_log | tail -n 100 | sed -e \"s/$/\\n/\";"
+  tag = ["modsec"]
+  output = ""
+
+[[snippets]]
+  description = "Folder permission fixer"
+  command = "find . -type f -exec chmod 755 {} \\;"
+  tag = ["permission"]
+  output = ""
+
+[[snippets]]
+  description = "Find old php version 7.0"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php70"
+  tag = ["php"]
+  output = ""
+
+[[snippets]]
+  description = "Find old php version 5.6"
+  command = "whmapi1 php_get_vhosts_by_version version=ea-php56"
+  tag = ["php"]
+  output = ""
+
+[[snippets]]
+  description = "File permission fixer"
+  command = "find . -type f -exec chmod 644 {} \\;"
+  tag = ["permission"]
+  output = ""
+
+[[snippets]]
+  description = "External IP"
+  command = "curl ifconfig.me"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Exim mail Spam remove from a sender"
+  command = "exim -bpr| grep <Spam_sender=user@abc.com>| awk '{print $3}'|xargs exim -Mrmsa/sa01"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim configuation"
+  command = "cat /etc/exim.conf"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail spammer ip find by subject"
+  command = "grep \"<= <spammer_email=user01@example.com>\" /var/log/exim_mainlog | grep \"<Subject=Melt Fat Naturally>\" | grep -o \"\\[[0-9.]*\\]\" | sort -n | uniq -c | sort -n"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail statistics top20"
+  command = "eximstats -ne -nr -t20 /var/log/exim_mainlog"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail grep for email and date"
+  command = "exigrep <Email=info@abc.com> /var/log/exim_mainlog | tail -n 50"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail duplicate subject"
+  command = "awk -F\"T=\\\"\" '/<=/ {print $2}' /var/log/exim_mainlog | cut -d\\\" -f1 | sort | uniq -c | sort -n| tail"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail delivery failed from email"
+  command = "grep \"Mail delivery failed:\" /var/log/exim_mainlog | grep <Email=help@example.com> | tail -1"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail delivery failed all user"
+  command = "grep \"for .*@.*\" /var/log/exim_mainlog | grep \"<= <>\" | awk -F\"T=\" '{print $2}' | awk '{print $NF,$0}' | awk -F\" for\" '{print $1}' | sort | uniq -c | sort -n"
+  tag = ["exim_mail"]
+  output = ""
+
+[[snippets]]
+  description = "Email password change"
+  command = "/usr/local/cpanel/bin/cpapi2 --user=<Username> Email passwdpop domain=<Domain=example.com> email=<Email> password=<Password>"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Domain status checker"
+  command = "cat /etc/userdomains | cut -f1 -d: | grep -v \\* | while read domain; do echo -n \"$domain :: \" ; curl -s -o /dev/null -w \"%{http_code}\\n\\n\" $domain; done | tee finaldomain_list.txt"
+  tag = ["domain"]
+  output = ""
+
+[[snippets]]
+  description = "Disk usage without sorting"
+  command = "du -hx --max-depth=1 $PWD"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk usage directory sorting"
+  command = "du -hxa --max-depth=1 | awk '{printf \"%s %08.2f\\t%s\\n\", index(\"KMG\", substr($1, length($1))), substr($1, 0, length($1) -1), $0}' | sort -r|cut -f2,3"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk usage directory and file sorting"
+  command = "find $PWD -mindepth 1 -maxdepth 1 -exec du -hs {} + 2>/dev/null | sort -hr | head -20"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk usage analysis"
+  command = "echo;echo;echo =====  Retentions:;egrep -i '(enable|daily|weekly|monthly)' /var/cpanel/backups/config;echo;echo =====  Final States;grep -i \"final state\" /usr/local/cpanel/logs/cpbackup/*;echo;echo ===== Permission Denied Files; LL=`ls /usr/local/cpanel/logs/cpbackup/| tail -n1`; grep -i \"permission\" /usr/local/cpanel/logs/cpbackup/$LL | awk '{print $4}' | cut -d: -f1| sort | uniq;echo;echo =====  Errors;egrep -i \".TMD|mysqldump failed|error\" /usr/local/cpanel/logs/cpbackup/$LL | tail -n10;echo;echo =====  Backups;du -skxc /backup/* | sort -rn | perl -ne '($s,$f)=split(m{\\t});for (qw(K M G T)) {if($s<1024) {printf(\"%.1f\",$s);print \"$_\\t$f\"; last};$s=$s/1024}';echo;echo =====  Logs +100M;find / -regex '.*\\(log\\|\\.err\\)' -not -path '*virtfs*' -size +100M 2>/dev/null -exec du -kh {} > log_list \\;; sort -k1 -n log_list;echo;echo =====  Dirs of Interest +1G;find /home/ -type d -not -path '*virtfs*' 2>/dev/null -exec sh -c \"du --max-depth=0 -m {} | grep -E '^[[:digit:]]{4}'\" > dir_list \\;;> lw_temp;for i in $(cat dir_list | awk '{print $2}');do if [[ -z \"$k\" ]];then k=$i;fi;if [[ \"$(echo $i | grep $k)\" ]];then k=$i;else grep $k dir_list >> lw_temp;k=\"\";fi;done; cat lw_temp | sort -k1 -n -r | perl -ne '($s,$f)=split(m{\\t});for (qw(M G T)) {if($s<1024) {printf(\"%.1f\",$s);print \"$_\\t$f\"; last};$s=$s/1024}';rm lw_temp -f;echo;echo =====  Home Dirs +3G; du --max-depth=1 -m /home | awk '$1 > 3041' | sort -rn | sort -rn | perl -ne '($s,$f)=split(m{\\t});for (qw(M G T)) {if($s<1024) {printf(\"%.1f\",$s);print \"$_\\t$f\"; last};$s=$s/1024}';echo;echo =====  Large Files +1G;find / -type f ! -path '*virtfs*' ! -path '/backup/*' -size +1G 2>/dev/null -exec sh -c \"du -kh {}\" > file_list \\;;cat file_list | sort -k1 -n -r | perl -ne '($s,$f)=split(m{\\t});for (qw(G T)) {if($s<1024) {printf(\"%.1f\",$s);print \"$_\\t$f\"; last};$s=$s/1024}';"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk inode usage"
+  command = "df -i"
+  tag = ["disk"]
+  output = ""
+
+[[snippets]]
+  description = "Disk clean Purge dead comet files"
+  command = "/usr/local/cpanel/bin/purge_dead_comet_files"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk clean Find log files 100M+"
+  command = "find / -name \"*log\" -size +100M -exec ls -lah {} \\;"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "Disk clean Find incomplete backup and remove"
+  command = "find /backup -type f -name backup_incomplete | awk -F 'backup_incomplete' '{print $1}' | xargs rm -rf"
+  tag = ["disk_usage"]
+  output = ""
+
+[[snippets]]
+  description = "DNS resolver configuration"
+  command = "cat /etc/resolv.conf"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "DNS query"
+  command = "dig domain.com ANY +noall +answer"
+  tag = ["dns"]
+  output = ""
+
+[[snippets]]
+  description = "Current php handlers"
+  command = "/usr/local/cpanel/bin/rebuild_phpconf --current"
+  tag = ["phpinfo"]
+  output = ""
+
+[[snippets]]
+  description = "Create phpinfo page for current user"
+  command = "cpUser=`pwd | cut -d/ -f3`; for i in `pwd`; do touch $i/phpinfo.php; chown $cpUser. $i/phpinfo.php ; echo \"<?php phpinfo(); ?>\" > $i/phpinfo.php; done"
+  tag = ["phpinfo"]
+  output = ""
+
+[[snippets]]
+  description = "Count specific file number"
+  command = "find . -name \"<Extension=*.png\"> -type f | wc -l"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "Cloudlinux lve configuration edit"
+  command = "vi /etc/container/ve.cfg"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "Cloudlinux license update"
+  command = "clnreg_ks --force"
+  tag = ["license"]
+  output = ""
+
+[[snippets]]
+  description = "Check domain status script run"
+  command = "wget http://dhakawebhost.com/scripts/domain-status.sh && chmod +x domain-status.sh && ./domain-status.sh"
+  tag = ["script_run"]
+  output = ""
+
+[[snippets]]
+  description = "CXS scan single account"
+  command = "/usr/sbin/cxs --mail root --smtp --exploitscan --virusscan --sversionscan --nobayes --nounofficial --dbreport --ignore /etc/cxs/cxs.ignore --xtra /etc/cxs/cxs.xtra --quarantine /home/quarantine --options mMOLfuSGchexdnwZRrD --qoptions Mv --www --summary --html --ssl --clamdsock /var/clamd --nofallback --user <User=dhakawe1>"
+  tag = ["cxs"]
+  output = ""
+
+[[snippets]]
+  description = "CXS scan full"
+  command = "/usr/sbin/cxs --report /root/scan.log --mail root --virusscan --voptions fmMhexT --quarantine /home/quarantine --qoptions Mv --ignore /etc/cxs/cxs.ignore --options OLfmMChexdDZRP --all"
+  tag = ["cxs", "scan"]
+  output = ""
+
+[[snippets]]
+  description = "CSF restart"
+  command = "csf -ra"
+  tag = ["csf"]
+  output = ""
+
+[[snippets]]
+  description = "CSF IP unblock"
+  command = "csf -dr <ip address>"
+  tag = ["csf"]
+  output = ""
+
+[[snippets]]
+  description = "CPU Speed test"
+  command = "sysbench --test=cpu run"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Bruteforce Bot Finding"
+  command = "grep 2> /dev/null \"$(date +\"%d/%b/%Y\")\" /usr/local/apache/domlogs/* | egrep -i '(crawl|bot|spider|yahoo|bing|google)'| awk '{print $1}' | cut -d: -f1 | sort | uniq -c | sort -rn | head"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Benchmark speed test"
+  command = "wget -qO- bench.sh | bash"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Bandwidth Speed Test"
+  command = "wget -O - http://www.dhakawebhost.com/scripts/speedtest_cli.py | python"
+  tag = ["speed_test"]
+  output = ""
+
+[[snippets]]
+  description = "Backup single account"
+  command = "/scripts/pkgacct <username>"
+  tag = ["backup"]
+  output = ""
+
+[[snippets]]
+  description = "Backup configuration"
+  command = "cat /var/cpanel/backups/config"
+  tag = ["backup"]
+  output = ""
+
+[[snippets]]
+  description = "Average phpfpm process size"
+  command = "ps --no-headers -o \"rss,cmd\" -C php-fpm | awk '{ sum+=$1 } END { printf (\"%d%s\\n\", sum/NR/1024,\"Mb\") }'"
+  tag = ["php-fpm"]
+  output = ""
+
+[[snippets]]
+  description = "Apache syntax test"
+  command = "httpd -t"
+  tag = ["apache"]
+  output = ""
+
+[[snippets]]
+  description = "Apache log error by code"
+  command = "cat /usr/local/apache/logs/access_log | cut -d ' ' -f 9 | sort | uniq -c | sort -nr"
+  tag = ["error"]
+  output = ""
+
+[[snippets]]
+  description = "Apache log error 500 reasons"
+  command = "grep \" 500 \" /usr/local/apache/logs/access_log | cut -d ' ' -f 7 | sort | uniq -c | sort -nr | head -n 50"
+  tag = ["log"]
+  output = ""
+
+[[snippets]]
+  description = "Apache log error 404 reasons"
+  command = "grep \" 404 \" /usr/local/apache/logs/access_log | cut -d ' ' -f 7 | sort | uniq -c | sort -nr | head -n 50"
+  tag = ["error"]
+  output = ""
+
+[[snippets]]
+  description = "Apache grep log by text and sort"
+  command = "grep -i \"file not found\" /etc/apache2/logs/error_log |grep -v whm-server-status |awk -F'[][]' '{print $8}' |sort |uniq -c |sort -nr |head"
+  tag = ["grep"]
+  output = ""
+
+[[snippets]]
+  description = "Apache grep log by ip"
+  command = "grep <IP=192.168.0.1> /etc/apache2/logs/error_log | tail -n 20"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Apache grep log by domain"
+  command = "grep <Domain=abc.com> /etc/apache2/logs/error_log | tail -n 20"
+  tag = ["loginfo"]
+  output = ""
+
+[[snippets]]
+  description = "Apache configuration"
+  command = "cat /usr/local/apache/conf/httpd.conf"
+  tag = ["config_file"]
+  output = ""
+
+[[snippets]]
+  description = "All service status"
+  command = "systemctl list-units --type service"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "All failed service status"
+  command = "systemctl --type=service --state=failed list-units"
+  tag = ["cpanel"]
+  output = ""
+
+[[snippets]]
+  description = "All domain list"
+  command = "cut -f \"1\" -d : /etc/trueuserdomains | sort | more >domains.txt"
+  tag = ["domain"]
+  output = ""
+
+[[snippets]]
+  description = "All bruteforce info"
+  command = "echo \"Number of cores:\";grep proc /proc/cpuinfo -c;echo;echo \"Memory usage:\";free -mh;echo;echo \"Number of requests by domain:\" ; find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y)|awk '{print $1}'|cut -d':' -f1|sort |uniq -c|sort -n|tail -n5; echo; echo \"Number of POST requests by domain:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y)|grep POST|awk '{print $1}'|cut -d':' -f1|sort |uniq -c|sort -n|tail -n5;echo;echo \"Number of xmlrpc connections:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |grep xmlrpc -c;echo;echo \"IPs with most xmlrpc requests:\"; find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |grep xmlrpc | awk '{print $1}'|cut -d':' -f2|sort |uniq -c|sort -n|tail -n10;echo;echo \"Number of wp-login requests:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |grep wp-login -c; echo;echo \"IP's with most wp-login requests:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |grep wp-login | awk '{print $1}'|cut -d':' -f2|sort |uniq -c|sort -n|tail -n10;echo;echo \"IP's with most requests:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |awk '{print $1}'|cut -d':' -f2|sort |uniq -c|sort -n|tail ;echo;echo \"URLs with most requests:\";find /usr/local/apache/domlogs/ -maxdepth 1 -type f|xargs grep $(date +%d/%b/%Y) |awk '{print $7}'|sort|uniq -c|sort -n | tail;echo;echo \"IPs with most HTTP connections currently:\";netstat -nt 2>/dev/null | egrep ':80|:443'| awk '{print $5}' | awk -F: 'BEGIN { OFS = \":\"} {$(NF--)=\"\"; print}' | awk '{print substr($0, 1, length($0)-1)}' | sort | uniq -c | sort -rn | head"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Tar jetbackup incremental file"
+  command = "tar -czvf <Filename=cpmove-.tar.gz> ./"
+  tag = ["compress"]
+  output = ""
+
+[[snippets]]
+  description = "website php version and cms info"
+  command = "whodat <websitename=skywebhost.net>"
+  tag = ["file"]
+  output = ""
+
+[[snippets]]
+  description = "Find extension"
+  command = "find <Location=/home/dhakawe1> -name \"<extension=*.pid>\""
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "find file"
+  command = "find <locaiton=/home/dhakawe1> -name <filename=name>"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "recaculate cpanel mail quota"
+  command = "doveadm quota recalc -u <user=dhakawe1>"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "wp bruteforce most request ip"
+  command = "echo -e \"\\e[93mWordPress Brute-Forcing:\\e[0m\"; grep -s \"$(date +%d/%b/%Y)\" /usr/local/apache/domlogs/* | egrep '(wp-login|ajax|login|xmlrpc|administrator)' | grep -v ftp | awk  '{print $1 \" \" $7}' | cut -d: -f2| cut -d' ' -f1 | sort -rn | uniq -c | sort -rn | head -20"
+  tag = ["bruteforce"]
+  output = ""
+
+[[snippets]]
+  description = "Generate mail directory size"
+  command = "/scripts/generate_maildirsize --confirm --verbose $username"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "website info"
+  command = "whodat <Website=dhakawebhost.com>"
+  tag = ["website"]
+  output = ""
+
+[[snippets]]
+  description = "Spam script directory finder"
+  command = "grep cwd=/ /var/log/exim_mainlog | cut -d = -f 2 | cut -d \" \" -f 1 | sort | uniq -c | sort -n"
+  tag = ["spam"]
+  output = ""
+
+[[snippets]]
+  description = "Mail queue by sender"
+  command = "exiqgrep -f <sender=info@abc.com>"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "Mail queue by recipient"
+  command = "exiqgrep -r <recipient=info@a.com>"
+  tag = ["mail"]
+  output = ""
+
+[[snippets]]
+  description = "Exim Mail email forwarders highest count"
+  command = "grep \"=> .*@.*@.*\" /var/log/exim_mainlog | awk '{print $6,$5}' | sort | uniq -c | sort -n"
+  tag = ["exim"]
+  output = ""
+
+[[snippets]]
+  description = "Memcached stats"
+  command = "/bin/echo -e 'stats\\nquit' | nc -q1  $(<hostname:cloud.dhakawebhost.com> -s) 11211"
+  tag = ["memcache"]
+  output = ""
+
+[[snippets]]
+  description = "Memcache stats"
+  command = "/bin/echo -e 'stats\\nquit' | nc  $(hostname -s) 11211"
+  tag = ["memcache"]
+  output = ""
+
+[[snippets]]
+  description = "Memcache stats realtime"
+  command = "watch -d -n 10 \"/bin/echo -e 'stats\\nquit' | nc  $(hostname -s) 11211\""
+  tag = ["memcache"]
+  output = ""
+
+[[snippets]]
+  description = "Memcached monitoring"
+  command = "sudo ngrep -w get -d lo port 11211"
+  tag = ["memcache"]
+  output = ""
+
+[[snippets]]
+  description = "Exim mail statistics with error"
+  command = "eximstats -nr -t20 /var/log/exim_mainlog"
+  tag = ["exim"]
+  output = ""
+
+[[snippets]]
+  description = "Exim mail php script"
+  command = "grep 'cwd=/home' /var/log/exim_mainlog | awk '{print $3}' | cut -d / -f 3 | sort -bg | uniq -c | sort -bg"
+  tag = ["exim"]
+  output = ""
+
+[[snippets]]
+  description = "Exim mail remote unknown user"
+  command = "grep  \"550 5.1.1\" /var/log/exim_mainlog"
+  tag = ["exim"]
+  output = ""
+
+[[snippets]]
+  description = "Most IP request domain info"
+  command = "grep -R <ip=122.144.9.233> /usr/local/apache/domlogs/* | tail -n 30"
+  tag = ["Most"]
+  output = ""
+
+[[snippets]]
+  description = "Mysql monitoring enabled"
+  command = "whmapi1 configureservice service=mysql enabled=1 monitored=1"
+  tag = ["mysql"]
+  output = ""
+
+[[snippets]]
+  description = "Find file greater than 100mb in home directory"
+  command = "find /home -type f -size +100000k -exec ls -lh {} \\; | awk '{ print $9 \": \" $5 }'"
+  tag = ["size"]
+  output = ""
+
+[[snippets]]
+  description = "Install SSL on hostname"
+  command = "/usr/local/cpanel/bin/checkallsslcerts"
+  tag = ["ssl"]
+  output = ""
+
+[[snippets]]
+  description = "Apache grep by domain"
+  command = "tail -n0 -f /var/log/apache2/error_log | grep purelabbd.com"
+  tag = ["apache"]
+  output = ""
+
+[[snippets]]
+  description = "Apache grep by ip"
+  command = "tail -n0 -f /var/log/apache2/error_log | grep 103.187.24.59"
+  tag = ["apache"]
+  output = ""
+
+[[snippets]]
+  description = "Check System stat"
+  command = "wget -O - https://www.dhakawebhost.com/scripts/system-check.sh | bash"
+  tag = ["system"]
+  output = ""
+
+[[snippets]]
+  description = "Top 20 Swap users"
+  command = "for file in /proc/*/status ; do awk '/VmSwap|Name/{printf $2 \" \" $3}END{ print \"\"}' $file; done | sort -k 2 -n -r | head -20"
+  output = ""
+
+[[snippets]]
+  description = "MySQL current and maximum connection"
+  command = "echo -e \"\\n\\e[1;35m=== Current MySQL Connections ===\\e[0m\\n\"; netstat -nap | grep -i sql.sock | wc -l; echo -e \"\\n\\e[1;33m=== MySQL Connections ===\\e[0m\\n\";mysql -e 'show status;' |grep --color=never connect"
+  tag = ["mysql_command"]
+  output = ""
+
+[[snippets]]
+  description = "mysqltuner script without pass and isam info"
+  command = "perl mysqltuner.pl --skippassword --nomyisamstat"
+  output = ""
