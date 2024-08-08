@@ -174,3 +174,4 @@ sleep 2
 echo -e "\e[1;32mInstallation Completed\e[0m"
 echo -en '\n'
 fi
+
